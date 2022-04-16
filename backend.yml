@@ -44,12 +44,10 @@ spring:
   config:
     activate:
       on-profile: key-vault
-  cloud:
-    azure:
-      keyvault:
-        secret:
-          enabled: true
-          endpoint: ${AZURE_KEY_VAULT_URI}
+
+azure:
+  keyvault:
+    uri: ${AZURE_KEY_VAULT_URI}
 
 MYSQL_SERVER: ${MYSQL-SERVER-FULL-NAME}
 MYSQL_DATABASE: ${MYSQL-DATABASE-NAME}
