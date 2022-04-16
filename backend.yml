@@ -1,7 +1,9 @@
 spring:
   config:
     activate:
-      on-profile: azure
+      on-profile:
+        - azure
+        - default
   flyway:
     enabled: false
   security:
