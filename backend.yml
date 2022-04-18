@@ -39,4 +39,22 @@ spring:
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
 
+---
+spring:
+  config:
+    activate:
+      on-profile: key-vault
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          enabled: true
+          property-source-enabled: true
+          property-sources:
+            - endpoint: ${KEYVAULT_URI}
+              name: 'animal-rescue-vault'
 
+MYSQL_SERVER: ${MYSQL-SERVER-FULL-NAME}
+MYSQL_DATABASE: ${MYSQL-DATABASE-NAME}
+MYSQL_USERNAME: ${MYSQL-SERVER-ADMIN-LOGIN-NAME}
+MYSQL_PASSWORD: ${MYSQL-SERVER-ADMIN-PASSWORD}
